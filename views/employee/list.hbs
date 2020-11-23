@@ -1,0 +1,42 @@
+
+<h3><a href="/employee" class="btn btn-secondary"><i class="fa fa-plus"> Create New</i></a> {{showData}} </h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{!-- test direct data --}}
+        {{!-- {{#each temp }}
+        <tr>
+            <td>{{this}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>
+                <a><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>  
+                <a><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}} --}}
+        {{!-- database data --}}
+        {{#each lists }}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>
+                <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>  
+                <a href="/employee/delete/{{this._id}}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
